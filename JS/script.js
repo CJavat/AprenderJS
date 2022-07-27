@@ -420,11 +420,164 @@ for(var i=0; i<20; i++) {
 }
 
 contenedor.appendChild(documentFragment); */
+/* 
+
+const contenedor1 = document.querySelector(".contenedor-1");
+const contenedor2 = document.querySelector(".contenedor-2");
+const contenedorConScroll = document.querySelector(".contenedorConScroll");
+const boton = document.querySelector(".boton");
+const input = document.querySelector(".teclado");
+const img = document.querySelector(".img-robot");
+
+boton.addEventListener("click",()=>{
+    console.log("Click");
+});
+
+boton.addEventListener("dblclick",()=>{
+    console.log("Doble Click");
+});
+
+boton.addEventListener("mouseover",()=>{
+    console.log("Mouse Over");
+});
+
+boton.addEventListener("mouseout",()=>{
+    console.log("Mouse Out");
+});
+
+boton.addEventListener("contextmenu",()=>{
+    console.log("Context Menu");
+});
+
+boton.addEventListener("mouseenter",()=>{
+    console.log("Mouse Enter");
+});
+
+boton.addEventListener("mousemove",()=>{
+    console.log("Mouse Move");
+});
+
+boton.addEventListener("mouseleave",()=>{
+    console.log("Mouse Leave");
+});
+
+boton.addEventListener("mouseup",()=>{
+    console.log("Mouse Up");
+});
+
+boton.addEventListener("mousedown",()=>{
+    console.log("Mouse Down");
+});
+
+input.addEventListener("keydown", () => {
+    console.log("Una tecla presionada.");
+});
+
+input.addEventListener("keypress",()=>{
+    console.log("Un usuario presionó una tecla.");
+});
+
+input.addEventListener("keyup", ()=>{
+    console.log("Una tecla fué soltada.");
+});
+
+img.addEventListener("error", ()=>{
+    console.log("Error al cargar la imágen.");
+});
+
+addEventListener("load", () =>{
+    console.log("Ha cargado el sitio correctamente.");
+})
+
+addEventListener("beforeunload", ()=>{
+    console.log("Estás por irte del sitio.");
+});
+
+addEventListener("unload", () =>{
+    console.log("Ya te fuiste del sitio.");
+} );
+
+addEventListener("resize", ()=>{
+    console.log("La ventana está cambiando de tamaño.");
+});
+
+contenedorConScroll.addEventListener("scroll", ()=>{
+    console.log("Se está scrolleando.");
+});
+
+input.addEventListener("select", ()=>{
+    console.log("Texto seleccionado.");
+});
+
+let primeraLetra = 0;
+input.addEventListener("keyup", (e)=>{
+    console.log(e);
+    boton.style.borderRadius = "20px";
+    let tecla = e.key;
+    if(primeraLetra === 0) {
+        boton.innerHTML = tecla;
+        boton.style.backgroundColor = "red";
+        boton.style.color = "white";
+    }
+    else {
+        boton.innerHTML += tecla;
+        boton.style.backgroundColor = "black";
+        boton.style.color = "white";
+        let palabras = input.value;
+        let longitudPalabras = input.value.length
+        console.log("palabras = " + palabras);
+        if(tecla == 'Backspace') {
+            boton.innerHTML = "";
+            for(let i=0; i<longitudPalabras; i++) {
+                boton.innerHTML += palabras[i];
+            }
+        }
+    }
+    primeraLetra++;
+});
+
+const meses          = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviempre", "Diciembre"];
+const diasDeLaSemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sàbado"];
+
+const reloj = document.querySelector(".reloj");
+const pararReloj = document.querySelector(".pararReloj");
+
+reloj.style.position = "absolute";
+reloj.style.top = "0";
+reloj.style.right = "0"
+pararReloj.style.position = "absolute";
+pararReloj.style.top = "50px";
+pararReloj.style.right = "0"
 
 
-const screen = window.screen;
+const actualizarReloj = setInterval(()=>{
+    const fecha = new Date();
+    
+    let diaDeLaSemana = fecha.getDay();
+    let dia           = fecha.getDate();
+    let mes           = fecha.getMonth();
+    let año           = fecha.getFullYear();
+    let hora          = fecha.getHours();
+    let minutos       = fecha.getMinutes();
+    let segundos      = fecha.getSeconds();
 
-screen.width;
+    if(segundos.toString().length == 1) {
+        console.log("longitud de los segundos: " + segundos.length);
+        reloj.innerHTML = `Hoy es ${diasDeLaSemana[diaDeLaSemana]}, ${dia}/${meses[mes]}/${año} - ${hora}:${minutos}:0${segundos}`;
+    }
+    else {
+        reloj.innerHTML = `Hoy es ${diasDeLaSemana[diaDeLaSemana]}, ${dia}/${meses[mes]}/${año} - ${hora}:${minutos}:${segundos}`;
+    }
+}, 500);
 
-console.log(screen);
-document.write(screen.width);
+pararReloj.addEventListener("dblclick", ()=>{
+    reloj.style.color = "red";
+    clearInterval(actualizarReloj);
+}); */
+
+
+/* Formulario:
+     - Contener nombre, mail, materia adeaudada.
+     - Validar mails y nombres.
+     - Enviar al servidor de manera pulida.
+*/
