@@ -574,10 +574,27 @@ pararReloj.addEventListener("dblclick", ()=>{
     reloj.style.color = "red";
     clearInterval(actualizarReloj);
 }); */
+/*AWAIT & ASYNC
+ *
 
-
-/* Formulario:
-     - Contener nombre, mail, materia adeaudada.
-     - Validar mails y nombres.
-     - Enviar al servidor de manera pulida.
 */
+
+
+const objeto = {
+    propiedad1 : "valor1",
+    propiedad2 : "valor2",
+    propiedad3 : "valor3",
+}
+
+const obtenerInformacion = () => {
+    return new Promise((res,rej)=>{
+        setTimeout(()=>{res(objeto)},3000)
+    });
+}
+
+const mostrarResultado = async () => {
+    resultado = await obtenerInformacion();
+    console.log(resultado); 
+}
+
+mostrarResultado();
