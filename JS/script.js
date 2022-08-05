@@ -579,8 +579,17 @@ pararReloj.addEventListener("dblclick", ()=>{
 
 */
 
+function prueba(callback) {
+    callback("roberto");
+}
 
-const objeto = {
+function decirNombre(nombre) {
+    console.log(nombre);
+}
+
+prueba(decirNombre);
+
+/* const objeto = {
     propiedad1 : "valor1",
     propiedad2 : "valor2",
     propiedad3 : "valor3",
@@ -597,4 +606,4 @@ const mostrarResultado = async () => {
     console.log(resultado); 
 }
 
-mostrarResultado();
+mostrarResultado(); */
