@@ -574,36 +574,172 @@ pararReloj.addEventListener("dblclick", ()=>{
     reloj.style.color = "red";
     clearInterval(actualizarReloj);
 }); */
-/*AWAIT & ASYNC
- *
 
-*/
+/* CALLBACK --> FUNCIÓN QUE LLAMA A OTRA FUNCIÓN.
 
 function prueba(callback) {
-    callback("roberto");
+    callback("esto es un callback");
 }
 
 function decirNombre(nombre) {
     console.log(nombre);
 }
 
-prueba(decirNombre);
+prueba(decirNombre); 
+*/
 
-/* const objeto = {
-    propiedad1 : "valor1",
-    propiedad2 : "valor2",
-    propiedad3 : "valor3",
+/* class Persona {
+    constructor(nombre, instagram) {
+        this.nombre = nombre;
+        this.instagram = instagram;
+    }
 }
 
-const obtenerInformacion = () => {
-    return new Promise((res,rej)=>{
-        setTimeout(()=>{res(objeto)},3000)
+const datosPersonas = [
+    ["carlos", "caxlsh"],
+    ["daniel", "cjavat"],
+    ["javato"]
+]
+
+const personas = [];
+
+for(let i=0; i < datosPersonas.length; i++) {
+    personas[i] = new Persona(datosPersonas[i][0], datosPersonas[i][1]);
+}
+
+const obtenerPersona = (id, callback) => {
+    if(personas[id] == undefined) {
+        callback("No se ha encontrado a la persona");
+    } else {
+        callback(null,personas[id],id);
+    }
+}
+
+const obtenerInstagram = (id, callback) => {
+    if(personas[id].instagram == undefined) {
+        callback("No se ha encontrado el instagram");
+    } else {
+        callback(null,personas[id].instagram);
+    }
+
+}
+
+obtenerPersona(1,(error,persona, id) => { 
+    if(error) {
+        console.log(error);
+    } else {
+        console.log(`Nombre: ${persona.nombre}`);
+        obtenerInstagram(id,(error, instagram)=>{
+            if(error) {
+                console.log(error);
+            } else {
+                console.log(instagram);
+
+            }
+        });
+    }
+}); */
+
+/*PROMISE*/
+/* let nombre = "peddro";
+let promesa = new Promise((reslove, reject) => {
+    if(nombre != "pedro") reject("Lo siento el nombre no es pedro");
+    else reslove(nombre);
+});
+promesa.then((resultado) => {
+    console.log(resultado);
+}).catch((e) => {
+    console.log(e);
+}); 
+
+class Persona {
+    constructor(nombre, instagram, seguidores) {
+        this.nombre = nombre;
+        this.instagram = instagram;
+        this.seguidores = seguidores;
+    }
+}
+
+const datosPersonas = [
+    ["carlos", "caxlsh", "100"],
+    ["daniel", "cjavat", "1"],
+    ["javato",null,"300"],
+    [,"cofla", "150"]
+]
+
+const personas = [];
+
+for(let i=0; i < datosPersonas.length; i++) {
+    personas[i] = new Persona(datosPersonas[i][0], datosPersonas[i][1], datosPersonas[i][2]);
+}
+
+const obtenerPersona = (id) => {
+    return new Promise((resolve, reject)=>{
+        //personas[id] == undefined ? reject("No se ha encontrado a la persona"); : resolve(personas[id]);
+        if(personas[id] == undefined) {reject("No se ha encontrado a la persona");}
+        else {resolve(personas[id]);}
     });
 }
 
-const mostrarResultado = async () => {
-    resultado = await obtenerInformacion();
-    console.log(resultado); 
+const obtenerInstagram = (id) => {
+    return new Promise((resolve,reject) => {
+        if(personas[id].instagram == undefined) {reject("No se ha encontrado el instagram");}
+        else {resolve(personas[id].instagram);}
+    });
 }
 
-mostrarResultado(); */
+const obtenerSeguidores = (id) => {
+    return new Promise((resolve, reject) => {
+        personas[id].seguidores == undefined ? reject("No se han encontrado los seguidores.") : resolve(personas[id].seguidores);
+    });
+}
+
+let parametro = 0;
+obtenerPersona(parametro).then((persona)=>{
+    console.log(persona.nombre);
+    return obtenerInstagram(parametro);
+}).then((instagram) => {
+    console.log(instagram);
+    return obtenerSeguidores(parametro);
+}).then((seguidores)=>{
+    console.log(seguidores);
+}).catch((e) => {
+    console.log(e);
+});
+*/
+
+/*AWAIT & ASYNC
+const obtenerInformacion = (text) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => resolve(text), Math.random()*2000);
+    });
+}
+
+const mostrarDatos = async () => {
+    dato1 = await obtenerInformacion("pito1")
+    dato2 = await obtenerInformacion("pito2")
+    dato3 = await obtenerInformacion("pito3")
+    console.log(dato1);
+    console.log(dato2);
+    console.log(dato3);
+};
+
+mostrarDatos(); */
+
+/*
+-- JSON --
+Estructura:
+    objeto = {
+        'variable1' : 'variable',
+        'variable2' : 'variable2'
+    };
+Serializar - Deserializar
+JSON.parse()      --> Convierte un string con estructura JSON a formato JSON (deserialización).
+JSON.stringify()  --> Convierte un dato de JavaScript en una cadena de texto JSON (serialización).
+JSON Polifill
+*/
+
+/*
+-- AJAX --
+
+*/

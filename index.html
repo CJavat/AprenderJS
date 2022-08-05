@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="CSS/style.css">
     </head>
     <body>
-        <!-- <div class="contenedor-1">
+        <div class="contenedor-1">
             <div class="contenedor-2">
                 <button class="boton">Aprietame</button>
                 <input type="text" class="teclado">
@@ -16,6 +16,7 @@
             <img src="data:image/png;base64,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" alt="MR. Robot" class="img-robot">
         </div>
         <div class="contenedorConScroll">
+            
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
             Cumque libero fugiat rem eum, 
             aperiam blanditiis commodi? Suscipit ea quas obcaecati laboriosam id facilis asperiores, 
@@ -39,15 +40,7 @@
         </div>
         <div class="reloj"></div>
         <button class="pararReloj">PARAR RELOJ</button> -->
-        <form class="formulario" id="formulario">
-            <label for="nombre" class="label" id="label">LLENAR EL FORMULARIO</label>
-            <div class="contenedor">
-                <input type="text" class="nombre" id="nombre" placeholder="ESCRIBE TU NOMBRE.">
-                <input type="email" class="email" id="email" placeholder="ESCRIBE TU EMAIL.">
-                <input type="text" class="materiaReprobada" id="materiaReprobada" placeholder="ESCRIBE LA MATERIA REPROBADA.">
-            </div>
-            <input type="submit" class="enviarDatos" id="enviarDatos" value="SOLICITAR MESA">
-        </form>
+
 
 
 
