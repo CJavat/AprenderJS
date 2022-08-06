@@ -727,7 +727,7 @@ const mostrarDatos = async () => {
 mostrarDatos(); */
 
 /*
--- JSON --
+-- JSON -----------------------------
 Estructura:
     objeto = {
         'variable1' : 'variable',
@@ -739,7 +739,52 @@ JSON.stringify()  --> Convierte un dato de JavaScript en una cadena de texto JSO
 JSON Polifill
 */
 
-/*
--- AJAX --
 
+
+/*
+-- AJAX  -----------------------
+- Objeto XMLHttpRequest
+- Enviar peticiones GET
+- Objeto ActiveXObject 
+- Nueva forma de trabajar el resultado
+- Enviar peticiones POST
+- Objeto FormData
 */
+
+/* let peticion;
+
+if(window.XMLHttpRequest) peticion = new XMLHttpRequest();
+else peticion = ActiveXObject("Microsoft.XMLHTTP");
+
+
+peticion.addEventListener("load", ()=>{
+    let respuesta;
+    if(peticion.status == 200) respuesta = peticion.response;
+    else respuesta = "Lo siento, no se ha encontrado el racurso.";
+
+    console.log(JSON.parse(respuesta));
+});
+
+
+peticion.open("POST", "informacion.txt");
+peticion.send();
+
+
+
+console.log(peticion); */
+
+
+/*
+    --FETCH--------------
+*/
+
+fetch("https://www.asad.com/", {
+    method : "POST", //ESTE ES EL METODO PARA USAR EL METODO DE POST.
+    body : JSON.stringify({
+        "nombre" : "Daniel",
+        "apellido" : "Plascencia"
+    }),
+    headers : {"content-type" : "application/json"}
+}) //Por defecto el metodo de evio es GET.
+    .then(res => res.text()) // || res.json() || res.blob.
+    .then(res=>console.log(JSON.parse(res)));
