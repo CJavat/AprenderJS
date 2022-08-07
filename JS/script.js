@@ -776,15 +776,20 @@ console.log(peticion); */
 
 /*
     --FETCH--------------
+    fetch("https://www.asad.com/", {
+        method : "POST", //ESTE ES EL METODO PARA USAR EL METODO DE POST.
+        body : JSON.stringify({
+            "nombre" : "Daniel",
+            "apellido" : "Plascencia"
+        }),
+        headers : {"content-type" : "application/json"}
+    }) //Por defecto el metodo de evio es GET.
+        .then(res => res.text()) // || res.json() || res.blob.
+        .then(res=>console.log(JSON.parse(res)));
 */
 
-fetch("https://www.asad.com/", {
-    method : "POST", //ESTE ES EL METODO PARA USAR EL METODO DE POST.
-    body : JSON.stringify({
-        "nombre" : "Daniel",
-        "apellido" : "Plascencia"
-    }),
-    headers : {"content-type" : "application/json"}
-}) //Por defecto el metodo de evio es GET.
-    .then(res => res.text()) // || res.json() || res.blob.
-    .then(res=>console.log(JSON.parse(res)));
+/*
+    --AXIOS----------
+axios("informacion.txt")
+    .then(res=>console.log(res));
+*/
