@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #222222;
+    /* background-color: #222222; */
     color: rgb(0, 0, 0);;
     font-family: sans-serif, Geneva, Tahoma, sans-serif;
 }
@@ -42,3 +42,16 @@ body {
     
 }
 
+.person {
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+}
+
+.post {
+    border: 1px solid #f25;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+}

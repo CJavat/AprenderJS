@@ -1,0 +1,20 @@
+[
+    {
+        "name" : "Daniel",
+        "lastname" : "Plascencia",
+        "age" : 20,
+        "nickname" : "cjavat",
+        "hobbies" : ["run", "eat", "code"],
+        "address" : {
+            "street" : "123 main st",
+            "city" : "New York"
+        },
+        "married" : true,
+        "friends" :[
+            {"name" : "Carlos", "nickname" : "Blakk"},
+            {"name" : "Eliot", "nickname" : "javat"}
+        ]
+    }
+
+    
+]

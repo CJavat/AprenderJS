@@ -793,3 +793,102 @@ console.log(peticion); */
 axios("informacion.txt")
     .then(res=>console.log(res));
 */
+
+//CURSO JSON.
+/* const person = {
+    "name" : "Daniel",
+    "lastname" : "Plascencia",
+    "age" : 20,
+    "nickname" : "cjavat",
+    "hobbies" : ["run", "eat", "code"],
+    "address" : {
+        "street" : "123 main st",
+        "city" : "New York"
+    },
+    "married" : true
+};
+
+const friends = [
+    {"name" : "Carlos", nickname : "Blakk"},
+    {"name" : "Eliot", nickname : "javat"}
+];
+
+person.friends = friends;
+
+console.log(person);
+console.log(JSON.stringify(person));
+
+console.log(person.address.city); */
+
+/* let postElement = '';
+//! https://jsonplaceholder.typicode.com/
+fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(response => response.json())
+    .then(json => {
+        for(let i=0; i<json.length; i++) {
+            postElement += `<li>${json[i].userId} - ${json[i].title}</li>`;
+        }
+        document.getElementById("post").innerHTML = postElement;
+    });
+
+let postElement2 = '';
+fetch('/user.json')
+    .then(response => response.json())
+    .then(data => {
+        for(let i=0; i<data.length; i++) {
+            postElement2 += `<li>${data[i].nickname} - ${data[i].nickname}</li>`;
+            document.getElementById("person").innerHTML = postElement2;
+        }
+    }); */
+
+/* const productos = [
+    {nombre: 'Platanos', valor: 500},
+    {nombre: 'Manzanas', valor: 200},
+    {nombre: 'Peras', valor: 100},
+    {nombre: 'Sandias', valor: 50},
+    {nombre: 'Melón', valor: 20}
+];
+const formulario = document.querySelector('#formulario');
+const boton = document.querySelector('#boton');
+const resultados = document.querySelector('#resultados');
+
+const filtrar = () => {
+    resultados.innerHTML = '<li></li>';
+
+    const texto = formulario.value.toLowerCase();
+
+    for(let producto of productos) {
+        let nombre = producto.nombre.toLocaleLowerCase();
+        if(nombre.indexOf(texto) !== -1) {
+            resultados.innerHTML += `
+            <li>${producto.nombre} - ${producto.valor}</li>`;
+        }
+    }
+    if(resultados === '') {
+        resultados.innerHTML += `<li>Producto no encontrado</li>`;
+    }
+}
+boton.addEventListener('click', filtrar);
+formulario.addEventListener('keyup', filtrar)
+filtrar(); */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
