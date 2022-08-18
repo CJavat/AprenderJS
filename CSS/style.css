@@ -7,51 +7,46 @@
 
 body {
     /* background-color: #222222; */
-    color: rgb(0, 0, 0);;
+    color: rgb(0, 0, 0);
     font-family: sans-serif, Geneva, Tahoma, sans-serif;
-}
-
-.formulario {
-    width: 700px;
-    height: 700px;
-    border: 5px solid #00c61b;
+    width: 100vw;
+    height: 100vh;
     display: flex;
-    margin: 2.5rem auto;
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 3px 3px 20px #999;
-    flex-flow: column nowrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    justify-content: space-evenly;
 }
 
-.label {
-    /* margin: 1.5rem auto; */
-    color: white;
-    justify-self: start;
+
+.img-glitch {
+    width: 10rem;
+    height: 10rem;
+    animation: glitch 3.5s infinite steps(1);
+    background-image: url('../IMG/Spider-Head\(Sin-Fondo\).png');
+    background-size: cover;
 }
 
-.contenedor {
-    /*  margin: 4rem auto; */
-    border: 3px solid #555;
-    border-radius: 10px;
-    text-align: center;
-    justify-self: center;
-    align-self: flex-start;
-    
-}
-
-.person {
-    border: 1px solid white;
-    border-radius: 5px;
-    background-color: black;
-    color: white;
-}
-
-.post {
-    border: 1px solid #f25;
-    border-radius: 5px;
-    background-color: white;
-    color: black;
+@keyframes glitch {
+    0%, 100%{
+        background-image: url('../IMG/Spider-Head\(Sin-Fondo\).png');
+        background-size: cover;
+        
+    }
+    92.5%{
+        background-image: url('../IMG/glitch-image-1660857999.png');
+        background-size: cover;
+        opacity: 1;
+        
+    }
+    95% {
+        background-image: url('../IMG/glitch-image-1660858003.png');
+        background-size: cover;
+        opacity: 0;
+        
+    }
+    97.5% {
+        background-image: url('../IMG/glitch-image-1660858803.png');
+        background-size: cover;
+        opacity: 1;
+        
+    }
 }
