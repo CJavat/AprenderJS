@@ -1,3 +1,5 @@
+
+
 /* class animal {
     constructor(especie, edad, color) {
         this.especie = especie;
@@ -872,11 +874,11 @@ boton.addEventListener('click', filtrar);
 formulario.addEventListener('keyup', filtrar)
 filtrar(); */
 
+"use strict";
 
+let nombre = 'carlos';
 
-
-
-
+console.log(nombre);
 
 
 
