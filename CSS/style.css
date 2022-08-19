@@ -11,11 +11,26 @@ body {
     font-family: sans-serif, Geneva, Tahoma, sans-serif;
     width: 100vw;
     height: 100vh;
+    flex-direction: column;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.clock {
+    width: 17rem;
+    height: 5rem;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.time {
+    font-size: 1rem;
+    margin: 0;
+}
 
 .img-glitch {
     width: 10rem;

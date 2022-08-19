@@ -875,18 +875,36 @@ formulario.addEventListener('keyup', filtrar)
 filtrar(); */
 
 "use strict";
+const clock = document.querySelector('.clock');
+const time = document.querySelector('.time');
 
-let nombre = 'carlos';
+let meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+let fecha = new Date(2022,8,19,18,59,59);
+let day = fecha.getDate();
+let month = fecha.getMonth();
+let year = fecha.getFullYear();
+let hour = fecha.getHours();
+let minute = fecha.getMinutes();
+let second = fecha.getSeconds();
 
-console.log(nombre);
+setInterval( () => {
+    const fechaActual = new Date();
+    
+    day = agregarCeros(fecha.getDate());
+    month = fecha.getMonth();
+    year = fecha.getFullYear();
 
+    hour = agregarCeros(fecha.getHours() - fechaActual.getHours());
+    minute = agregarCeros(fecha.getMinutes() - fechaActual.getMinutes());
+    second = agregarCeros(fecha.getSeconds() - fechaActual.getSeconds());
 
+    time.innerHTML = `${day} / ${meses[month]} / ${year} - ${hour}:${minute}:${second}`;
+},1000);
 
-
-
-
-
-
+const agregarCeros = n => {
+    if(n.toString().length < 2) return "0".concat(n);
+    return n;
+}
 
 
 
