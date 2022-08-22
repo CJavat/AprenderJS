@@ -875,7 +875,8 @@ formulario.addEventListener('keyup', filtrar)
 filtrar(); */
 
 "use strict";
-const clock = document.querySelector('.clock');
+
+/* const clock = document.querySelector('.clock');
 const time = document.querySelector('.time');
 
 let meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
@@ -904,7 +905,7 @@ setInterval( () => {
 const agregarCeros = n => {
     if(n.toString().length < 2) return "0".concat(n);
     return n;
-}
+} */
 
 /* EVENTOS DEL OBJETO */
 /* circulo.addEventListener("dragstart", ()=>console.log("1"));
@@ -940,7 +941,7 @@ rectangulo.addEventListener("drop", (e)=>{
 }); */
 
 /* EJERCICIO DRAG-DROP. */
-const zona = document.getElementById('zona-arrastre');
+/* const zona = document.getElementById('zona-arrastre');
 const imagenes = document.getElementById('imagenes');
 const imagen1 = document.getElementById('imagen-1');
 const imagen2 = document.getElementById('imagen-2');
@@ -970,12 +971,45 @@ zona.addEventListener("drop", (e) => {
     const clase = e.dataTransfer.getData('imagen');
     zona.style.background = `url(../IMG/${clase}.png)`;
     zona.style.backgroundSize = 'contain';
-});
+}); */
+
+const contenedorAbejita = document.getElementById('contenedor-abejita');
+const abejita = document.getElementById('abejita');
 
 
+abejita.animate(
+    [
+        /* DESPLAZAMIENTO EN LÍNEA. */
+        { transform: 'translate(0px, 0px) rotate(90deg)'}, //ROTACIÓN.
+        { transform: 'translate(90px, 0px) rotate(90deg)' }, //DESPLAZAMIENTO.
 
+        { transform: 'translate(80px, 0px) rotate(180deg)' }, //ROTACIÓN.
+        { transform: 'translate(80px, 80px) rotate(180deg)' }, //DESPLAZAMIENTO.
 
+        { transform: 'translate(80px, 80px) rotate(270deg)' }, //ROTACIÓN.
+        { transform: 'translate(0px, 80px) rotate(270deg)' }, //DESPLAZAMIENTO.
 
+        { transform: 'translate(0px, 80px) rotate(360deg)' }, //ROTACIÓN.
+        { transform: 'translate(0px, 0px) rotate(360deg)' }, //DESPLAZAMIENTO.
 
+        /* DESPLAZAMIENTO CRUZADO. */
+        { transform: 'translate(0px, 0px) rotate(495deg)' }, //ROTACIÓN.
+        { transform: 'translate(80px, 80px) rotate(495deg)' }, //DESPLAZAMIENTO.
 
+        { transform: 'translate(80px, 80px) rotate(630deg)' }, //ROTACIÓN.
+        { transform: 'translate(0px, 80px) rotate(630deg)' }, //DESPLAZAMIENTO.
 
+        { transform: 'translate(0px, 80px) rotate(765deg)' }, //ROTACIÓN.
+        { transform: 'translate(80px, 0px) rotate(765deg)' }, //DESPLAZAMIENTO.
+
+        { transform: 'translate(80px, 0px) rotate(630deg)' }, //ROTACIÓN.
+        { transform: 'translate(0px, 0px) rotate(630deg)' }, //DESPLAZAMIENTO.
+        
+        { transform: 'translate(0px, 0px) rotate(720deg)' }, //ROTACIÓN.
+        { transform: 'translate(0px, 0px) rotate(810deg)' }, //ROTACIÓN.
+    ], 
+    {
+        duration: 7000,
+        iterations: Infinity
+    }
+);

@@ -15,7 +15,7 @@ body {
     align-items: center;
 }
 
-.clock {
+/* .clock {
     width: 17rem;
     height: 5rem;
     background-color: #000;
@@ -112,4 +112,79 @@ body {
     background-color: #1f1f1f21;
     border-radius: 5px;
     box-shadow: 1px 1px 5px #1f1f1f21;
+} */
+.contenedor-abeja {
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 120px;
+    height: 120px;
+    margin: 0.5rem;
+}
+
+.abejita {
+    /* border: 1px solid black; */
+    width: 40px;
+    height: 40px;
+    background-image: url('../IMG/abejita/0.svg');
+    background-repeat: no-repeat;
+    background-position: 0;
+    background-size: contain;
+    animation: movimiento-abejita 1s infinite;
+}
+
+@keyframes movimiento-abejita {
+    0%, 100% {
+        background-image: url('../IMG/abejita/0.svg');
+    }
+    11.11% {
+        background-image: url('../IMG/abejita/1.svg');
+    }
+    22.22% {
+        background-image: url('../IMG/abejita/2.svg');
+    }
+    33.33% {
+        background-image: url('../IMG/abejita/3.svg');
+    }
+    44.44% {
+        background-image: url('../IMG/abejita/4.svg');
+    }
+    55.55% {
+        background-image: url('../IMG/abejita/5.svg');
+    }
+    66.66% {
+        background-image: url('../IMG/abejita/6.svg');
+    }
+    77.77% {
+        background-image: url('../IMG/abejita/7.svg');
+    }
+    88.88% {
+        background-image: url('../IMG/abejita/8.svg');
+    }
+}
+
+.contenedor-animation {
+    background-color: black;
+    width: 20rem;
+    height: 10rem;
+}
+
+.elemento1 {
+    background-color: #fff;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: 15px;
+}
+
+.elemento2 {
+    background-color: #fff;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: 15px;
+}
+
+.elemento3 {
+    background-color: #fff;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: 15px;
 }
