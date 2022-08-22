@@ -161,30 +161,3 @@ body {
         background-image: url('../IMG/abejita/8.svg');
     }
 }
-
-.contenedor-animation {
-    background-color: black;
-    width: 20rem;
-    height: 10rem;
-}
-
-.elemento1 {
-    background-color: #fff;
-    width: 2.5rem;
-    height: 2.5rem;
-    margin: 15px;
-}
-
-.elemento2 {
-    background-color: #fff;
-    width: 2.5rem;
-    height: 2.5rem;
-    margin: 15px;
-}
-
-.elemento3 {
-    background-color: #fff;
-    width: 2.5rem;
-    height: 2.5rem;
-    margin: 15px;
-}
