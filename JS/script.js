@@ -882,8 +882,74 @@ console.log(nombre);
 
 
 
+const circulo = document.querySelector('.circulo');
+const rectangulo = document.querySelector('.rectangulo');
+
+/* EVENTOS DEL OBJETO */
+/* circulo.addEventListener("dragstart", ()=>console.log("1"));
+circulo.addEventListener("drag", ()=>console.log("2"));
+circulo.addEventListener("dragend", ()=>console.log("3")); */
+
+/* EVENTOS DE LA ZONA */
+/* rectangulo.addEventListener('dragenter', ()=>console.log('1'));
+rectangulo.addEventListener('dragover', (e)=>{
+    e.preventDefault(); //Para darle permitir que se pueda ejecutar el evento drop.
+    console.log('2')
+});
+rectangulo.addEventListener('drop', ()=>console.log('3'));
+rectangulo.addEventListener('dragleave', ()=>console.log('4')); */
 
 
+/* DATA TRANSFER */
+/*
+    dataTransfer.setData.
+    dataTransfer.getData.
+*/
+
+/* circulo.addEventListener("dragstart", (e)=> {
+    e.dataTransfer.setData('id', e.target.className);
+});
+
+rectangulo.addEventListener("dragover", (e)=>{
+    e.preventDefault();
+});
+
+rectangulo.addEventListener("drop", (e)=>{
+    console.log(e.dataTransfer.getData('id'));
+}); */
+
+/* EJERCICIO DRAG-DROP. */
+const zona = document.getElementById('zona-arrastre');
+const imagenes = document.getElementById('imagenes');
+const imagen1 = document.getElementById('imagen-1');
+const imagen2 = document.getElementById('imagen-2');
+const imagen3 = document.getElementById('imagen-3');
+
+imagenes.addEventListener("dragstart", (e)=> {
+    e.dataTransfer.setData('imagen', e.target.id);
+});
+
+imagen1.addEventListener("dragstart", (e) => {
+    e.dataTransfer.setData('imagen', e.target.id);
+});
+
+imagen2.addEventListener("dragstart", (e) => {
+    e.dataTransfer.setData('imagen', e.target.id);
+});
+
+imagen3.addEventListener("dragstart", (e) => {
+    e.dataTransfer.setData('imagen', e.target.id);
+});
+
+zona.addEventListener("dragover", (e) => {
+    e.preventDefault();
+});
+
+zona.addEventListener("drop", (e) => {
+    const clase = e.dataTransfer.getData('imagen');
+    zona.style.background = `url(../IMG/${clase}.png)`;
+    zona.style.backgroundSize = 'contain';
+});
 
 
 
