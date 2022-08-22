@@ -9,19 +9,12 @@ body {
     /* background-color: #222222; */
     color: rgb(0, 0, 0);
     font-family: sans-serif, Geneva, Tahoma, sans-serif;
-<<<<<<< HEAD
-    width: 100vw;
-    height: 100vh;
-    flex-direction: column;
-=======
->>>>>>> e0eb9000aede8160c808e6a57f8666f8cee4daf0
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
 }
 
-<<<<<<< HEAD
 .clock {
     width: 17rem;
     height: 5rem;
@@ -37,8 +30,6 @@ body {
     margin: 0;
 }
 
-=======
->>>>>>> e0eb9000aede8160c808e6a57f8666f8cee4daf0
 .img-glitch {
     width: 10rem;
     height: 10rem;
