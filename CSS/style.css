@@ -6,8 +6,8 @@
 }
 
 body {
-    /* background-color: #222222; */
-    color: rgb(0, 0, 0);
+    background-color: #222222;
+    color: #fff;
     font-family: sans-serif, Geneva, Tahoma, sans-serif;
     display: flex;
     flex-flow: column wrap;
@@ -129,7 +129,7 @@ body {
     background-repeat: no-repeat;
     background-position: 0;
     background-size: contain;
-    animation: movimiento-abejita 1s infinite;
+    animation: movimiento-abejita 0.5s infinite;
 }
 
 @keyframes movimiento-abejita {

@@ -980,7 +980,7 @@ zona.addEventListener("drop", (e) => {
 
 const geolocation = navigator.geolocation;
 
-console.log(geolocation);
+console.log(geolocation.getCurrentPosition());
 
 
 
