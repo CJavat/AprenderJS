@@ -973,6 +973,39 @@ zona.addEventListener("drop", (e) => {
     zona.style.backgroundSize = 'contain';
 }); */
 
+/* API - GEOLOCALIZACIÓN */
+/*
+
+*/
+
+const geolocation = navigator.geolocation;
+
+console.log(geolocation);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const contenedorAbejita = document.getElementById('contenedor-abejita');
 const abejita = document.getElementById('abejita');
 
@@ -1011,5 +1044,7 @@ abejita.animate(
     {
         duration: 7000,
         iterations: Infinity
+
     }
 );
+
