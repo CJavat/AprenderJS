@@ -975,12 +975,200 @@ zona.addEventListener("drop", (e) => {
 
 /* API - GEOLOCALIZACIÓN */
 /*
-
+    getCurrentPosition()
+    watchPosition()
 */
 
 const geolocation = navigator.geolocation;
 
-console.log(geolocation.getCurrentPosition());
+const posicion = (pos) => {
+    console.log(pos);
+}
+
+const err = () => {
+    console.log(e);
+}
+
+const options = () => {
+    maximumAge: 0;
+    timeout: 3000;
+    enableHightAccurancy: true;
+}
+
+console.log(geolocation.getCurrentPosition(posicion, err, options)); //Solo te da la posición actual.
+
+console.log(geolocation.watchPosition(posicion, err, options)); //Te da la posición en tiempo real, aunque te estés moviendo.
+
+/* HISTORY */
+/*
+    .babk() --> Vuelve hacia atrás.
+    .forward --> va hacia adelante.
+    .length --> Tamaño del historial.
+    .go() --> Va al sitio indicado con un número relativo.
+    .pushState() --> Modifica la URL y conserva la info.
+    .state --> te muestra el nombre que le agregamos.
+    .popState --> Agrega una url al final.
+    .replaceState() --> Modifica la URL y no la conserva.
+
+    history.pushState({key: "valor"}, "", "URLNueva");
+*/
+console.log(history);
+
+/* FILEREADER */
+/*
+    ReadAsText()
+    ReadAsDataURL()
+*/
+const archivo = document.getElementById('archivo');
+
+/* LEER UN ÚNICO ARCHIVO - readAsText() */
+/* archivo.addEventListener("change", (e)=>{
+    leerArchivo(archivo.files[0]);
+});
+
+const leerArchivo = ar => {
+    const reader = new FileReader();
+    try {
+        reader.readAsText(ar);
+        reader.addEventListener("load", (e) => {
+            console.log(e.currentTarget.result);
+        });
+    }
+    catch(e) {
+        console.log("ERROR - " + e);
+    }
+} */
+
+/* LEER MULTIPLES ARCHIVOS readAsText() */
+/* archivo.addEventListener("change", (e)=>{
+    leerArchivo(archivo.files);
+});
+
+const leerArchivo = archivos => {
+    for(let i=0; i<archivos.length; i++) {
+        const reader = new FileReader();
+        reader.readAsText(archivos[i]);
+        reader.addEventListener("load", (e) => {
+            console.log(e.currentTarget.result);
+        });
+    }
+} */
+
+/* LEER MULTIPLES ARCHIVOS readAsDataURL() */
+/* const divResultado = document.getElementById('resultado');
+
+archivo.addEventListener("change", (e)=>{
+    leerArchivo(archivo.files);
+});
+
+const leerArchivo = archivos => {
+    for(let i=0; i<archivos.length; i++) {
+        const reader = new FileReader();
+        reader.readAsDataURL(archivos[i]);
+        reader.addEventListener("load", (e) => {
+            let newImg = `<img src='${e.currentTarget.result}' />`;
+            console.log(e.currentTarget.result);
+            divResultado.innerHTML += newImg;
+        });
+    }
+} */
+
+/* EJEMPLO #1 - GALERIA */
+/* const divGaleria = document.getElementById('galeria');
+
+archivo.addEventListener("change", (e)=>{
+    leerArchivo(archivo.files);
+});
+
+const leerArchivo = archivos => {
+    for(let i=0; i<archivos.length; i++) {
+        const reader = new FileReader();
+        reader.readAsDataURL(archivos[i]);
+        reader.addEventListener("load", (e) => {
+            let newImg = `<img src='${e.currentTarget.result}' />`;
+            console.log(e.currentTarget.result);
+            divGaleria.innerHTML += newImg;
+        });
+    }
+} */
+
+/* EJEMPLO #2 - DRAGDROP + FILEREADER */
+const zona = document.getElementById('zona-de-arrastre');
+const resultado = document.getElementById('resultado');
+
+zona.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    zona.style = `
+        background-color: #5caae5;
+        border: 4px dashed #417ba8;
+    `;
+});
+
+zona.addEventListener("dragleave", (e) => {
+    zona.style = `
+        background-color: #FFF;
+        border: 4px dashed #888;
+    `;
+});
+
+zona.addEventListener("drop", (e) => {
+    e.preventDefault();
+    zona.style = `
+        background-color: #FFF;
+        border: 4px dashed #888;
+    `;
+    console.log(e.dataTransfer.files[0]);
+    //uploadFileText(e.dataTransfer.files[0]);
+    //uploadFileImg(e.dataTransfer.files[0]);
+    uploadFileVideo(e.dataTransfer.files[0]);
+});
+
+/* const uploadFileText = ar => {
+    const reader = new FileReader();
+    reader.readAsText(ar);
+    reader.addEventListener("load", e => {
+        resultado.innerHTML += e.currentTarget.result + "<br>";
+    });
+} */
+
+/* const uploadFileImg = ar => {
+    const reader = new FileReader();
+    reader.readAsDataURL(ar);
+    reader.addEventListener("load", e => {
+        const URL = e.currentTarget.result;
+        const img = `<img src=${URL} /> <br>`;
+        resultado.innerHTML += img;
+    });
+} */
+
+const uploadFileVideo = ar => {
+    const reader = new FileReader();
+    reader.readAsArrayBuffer(ar);
+    reader.addEventListener("progress", e => {
+        const carga = Math.round((e.loaded / ar.size) * 100);
+        const carga2 = 50 - carga/2;
+        console.log(carga+"%");
+        document.querySelector(".descripcion").style = `color: #fff;`;
+        document.getElementById("descripcion").innerHTML = carga + "%";
+        document.querySelector(".barra-de-carga").style = `background-color: #483131; width: ${carga}%; left: ${carga2}%`;
+        
+    });
+    reader.addEventListener('loadend', e => {
+        document.querySelector(".descripcion").style = `color: #fff;`;
+        document.querySelector(".barra-de-carga").style = `background-color: #91d68f; width: 100%; left: 0;`;
+        document.querySelector(".descripcion").innerHTML = "ARCHIVO CARGADO.";
+    });
+    reader.addEventListener("load", e => {
+        const video = new Blob([new Uint8Array(e.currentTarget.result)], {type: "video/mp4"});
+        const url = URL.createObjectURL(video);
+        const elementVideo = document.createElement("VIDEO");
+        elementVideo.setAttribute("src", url);
+        elementVideo.setAttribute("controls", "");
+        resultado.appendChild(elementVideo);
+        elementVideo.play();
+        
+    });
+}
 
 
 
@@ -990,10 +1178,8 @@ console.log(geolocation.getCurrentPosition());
 
 
 
-
-
-
-
+/* EJEMPLO #2 -FILEREADER */
+/* EJEMPLO #3 -FILEREADER */
 
 
 

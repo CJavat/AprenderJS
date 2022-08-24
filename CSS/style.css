@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #222222;
+    background-color: #fff;
     color: #fff;
     font-family: sans-serif, Geneva, Tahoma, sans-serif;
     display: flex;
@@ -160,4 +160,69 @@ body {
     88.88% {
         background-image: url('../IMG/abejita/8.svg');
     }
+}
+
+.archivo {
+    border-radius: 5px;
+}
+
+/* .galeria {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: 100px;
+    grid-gap: 10px;
+}
+
+.galeria img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} */
+
+.zona-de-arrastre/* , .barra-de-carga */{
+    border: 4px dashed #888;
+    width: 500px;
+    height: 200px;
+    padding: 75px;
+    color: #222;
+    margin: auto;
+    margin-top: 30px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.barra-de-carga{
+    width: 5%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    z-index: -1;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+}
+
+.resultado {
+    width: 90%;
+    margin: 2rem;
+    padding: .5rem 1rem;
+    border: 1px solid #000;
+    border-radius: 5px;
+    color: red
+}
+
+img {
+    width: 200px;
+    margin: 1rem;
+}
+
+video {
+    width: 400px;
+    margin: 1rem;
 }
