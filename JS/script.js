@@ -1118,9 +1118,9 @@ zona.addEventListener("drop", (e) => {
         border: 4px dashed #888;
     `;
     console.log(e.dataTransfer.files[0]);
-    //uploadFileText(e.dataTransfer.files[0]);
-    //uploadFileImg(e.dataTransfer.files[0]);
-    uploadFileVideo(e.dataTransfer.files[0]);
+    //uploadFileText(e.dataTransfer.files[0]); // --> ARCHIVOS DE TEXTO.
+    //uploadFileImg(e.dataTransfer.files[0]); // -->  ARCHIVOS DE IMAGENES.
+    uploadFileVideo(e.dataTransfer.files[0]); // --> ARCHIVOS DE VIDEO.
 });
 
 /* const uploadFileText = ar => {
@@ -1144,7 +1144,7 @@ zona.addEventListener("drop", (e) => {
 const uploadFileVideo = ar => {
     const reader = new FileReader();
     reader.readAsArrayBuffer(ar);
-    
+
     reader.addEventListener("progress", e => {
         const carga = Math.round((e.loaded / ar.size) * 100);
         const carga2 = 50 - carga/2;
