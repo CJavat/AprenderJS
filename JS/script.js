@@ -1144,6 +1144,7 @@ zona.addEventListener("drop", (e) => {
 const uploadFileVideo = ar => {
     const reader = new FileReader();
     reader.readAsArrayBuffer(ar);
+    
     reader.addEventListener("progress", e => {
         const carga = Math.round((e.loaded / ar.size) * 100);
         const carga2 = 50 - carga/2;
@@ -1153,11 +1154,13 @@ const uploadFileVideo = ar => {
         document.querySelector(".barra-de-carga").style = `background-color: #483131; width: ${carga}%; left: ${carga2}%`;
         
     });
+
     reader.addEventListener('loadend', e => {
         document.querySelector(".descripcion").style = `color: #fff;`;
         document.querySelector(".barra-de-carga").style = `background-color: #91d68f; width: 100%; left: 0;`;
         document.querySelector(".descripcion").innerHTML = "ARCHIVO CARGADO.";
     });
+
     reader.addEventListener("load", e => {
         const video = new Blob([new Uint8Array(e.currentTarget.result)], {type: "video/mp4"});
         const url = URL.createObjectURL(video);
@@ -1178,8 +1181,10 @@ const uploadFileVideo = ar => {
 
 
 
-/* EJEMPLO #2 -FILEREADER */
-/* EJEMPLO #3 -FILEREADER */
+
+
+
+
 
 
 
