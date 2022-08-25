@@ -226,3 +226,21 @@ video {
     width: 400px;
     margin: 1rem;
 }
+
+.caja {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    background-color: #48e;
+}
+
+.caja span, .responsive-caja span {
+    margin: auto;
+}
+
+.responsive-caja {
+    width: 100%;
+    height: auto;
+    display: flex;
+    background-color: #333;
+}

@@ -995,13 +995,13 @@ const options = () => {
     enableHightAccurancy: true;
 }
 
-console.log(geolocation.getCurrentPosition(posicion, err, options)); //Solo te da la posición actual.
+//console.log(geolocation.getCurrentPosition(posicion, err, options)); //Solo te da la posición actual.
 
-console.log(geolocation.watchPosition(posicion, err, options)); //Te da la posición en tiempo real, aunque te estés moviendo.
+//console.log(geolocation.watchPosition(posicion, err, options)); //Te da la posición en tiempo real, aunque te estés moviendo.
 
 /* HISTORY */
 /*
-    .babk() --> Vuelve hacia atrás.
+    .back() --> Vuelve hacia atrás.
     .forward --> va hacia adelante.
     .length --> Tamaño del historial.
     .go() --> Va al sitio indicado con un número relativo.
@@ -1012,7 +1012,7 @@ console.log(geolocation.watchPosition(posicion, err, options)); //Te da la posic
 
     history.pushState({key: "valor"}, "", "URLNueva");
 */
-console.log(history);
+//console.log(history);
 
 /* FILEREADER */
 /*
@@ -1173,16 +1173,14 @@ const uploadFileVideo = ar => {
     });
 }
 
-
-
-
-
-
-
-
-
-
-
+/* MATCH MEDIA */
+const mq = matchMedia("(max-width: 500px)");
+const caja = document.getElementById("caja");
+mq.addEventListener("change", () => {
+    console.log("Resolucion cambiada");
+    if(mq.matches) caja.classList.replace("caja", "responsive-caja");
+    else if(caja.className = "responsive-caja") caja.classList.replace("responsive-caja", "caja");
+})
 
 
 
