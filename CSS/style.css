@@ -7,7 +7,6 @@
 
 body {
     background-color: #fff;
-    color: #fff;
     font-family: sans-serif, Geneva, Tahoma, sans-serif;
     display: flex;
     flex-flow: column wrap;
@@ -113,6 +112,7 @@ body {
     border-radius: 5px;
     box-shadow: 1px 1px 5px #1f1f1f21;
 } */
+
 .contenedor-abeja {
     border: 1px solid black;
     border-radius: 5px;
@@ -162,9 +162,9 @@ body {
     }
 }
 
-.archivo {
+/* .archivo {
     border-radius: 5px;
-}
+} */
 
 /* .galeria {
     width: 100%;
@@ -180,7 +180,7 @@ body {
     object-fit: cover;
 } */
 
-.zona-de-arrastre/* , .barra-de-carga */{
+/* .zona-de-arrastre {
     border: 4px dashed #888;
     width: 500px;
     height: 200px;
@@ -225,9 +225,9 @@ img {
 video {
     width: 400px;
     margin: 1rem;
-}
+} */
 
-.caja {
+/* .caja {
     width: 300px;
     height: 300px;
     display: flex;
@@ -243,4 +243,80 @@ video {
     height: auto;
     display: flex;
     background-color: #333;
+} */
+
+/* .caja {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    background-color: #48e;
+    margin: 100px auto;
+    color: #fff;
+    font-size: 26px;
+    border: 4px solid #248;
 }
+
+.caja span {
+    margin: auto;
+}
+
+.caja:nth-child(3) {
+    background-color: #e48;
+    border: 4px solid #824;
+}
+.caja:nth-child(4) {
+    background-color: #4e8;
+    border: 4px solid #284;
+}
+.caja:nth-child(5) {
+    background-color: #666;
+    border: 4px solid #444;
+} */
+
+/* .publicacion {
+    text-align: left;
+    margin: 20px;
+    color: #555;
+}
+
+.publicacion p {
+    padding: 10px 20px;
+    border-left: 2px solid #48e;
+}
+
+.publicacion h3 {
+    color: #48e;
+    border-bottom: 2px solid #48e;
+}
+
+.comentarios {
+    display: flex;
+}
+
+.comentarios input {
+    padding: 8px 12px;
+    border: none;
+    background-color: #48e;
+    color: #fff;
+    outline: none;
+}
+
+.comentarios .comentario {
+    flex-grow: 1;
+}
+
+.comentario::placeholder {
+    color: #bcf;
+}
+
+.comentarios .enviar {
+    min-width: 60px;
+    font-weight: 700;
+    font-family: monospace;
+}
+
+.sin-publicaciones {
+    margin: 1rem;
+    text-align: center;
+    color: #d23a3a;
+} */

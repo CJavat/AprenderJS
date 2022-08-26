@@ -979,7 +979,7 @@ zona.addEventListener("drop", (e) => {
     watchPosition()
 */
 
-const geolocation = navigator.geolocation;
+/* const geolocation = navigator.geolocation;
 
 const posicion = (pos) => {
     console.log(pos);
@@ -993,7 +993,7 @@ const options = () => {
     maximumAge: 0;
     timeout: 3000;
     enableHightAccurancy: true;
-}
+} */
 
 //console.log(geolocation.getCurrentPosition(posicion, err, options)); //Solo te da la posición actual.
 
@@ -1093,7 +1093,7 @@ const leerArchivo = archivos => {
 } */
 
 /* EJEMPLO #2 - DRAGDROP + FILEREADER */
-const zona = document.getElementById('zona-de-arrastre');
+/* const zona = document.getElementById('zona-de-arrastre');
 const resultado = document.getElementById('resultado');
 
 zona.addEventListener("dragover", (e) => {
@@ -1121,7 +1121,7 @@ zona.addEventListener("drop", (e) => {
     //uploadFileText(e.dataTransfer.files[0]); // --> ARCHIVOS DE TEXTO.
     //uploadFileImg(e.dataTransfer.files[0]); // -->  ARCHIVOS DE IMAGENES.
     uploadFileVideo(e.dataTransfer.files[0]); // --> ARCHIVOS DE VIDEO.
-});
+}); */
 
 /* const uploadFileText = ar => {
     const reader = new FileReader();
@@ -1141,7 +1141,7 @@ zona.addEventListener("drop", (e) => {
     });
 } */
 
-const uploadFileVideo = ar => {
+/* const uploadFileVideo = ar => {
     const reader = new FileReader();
     reader.readAsArrayBuffer(ar);
 
@@ -1171,16 +1171,173 @@ const uploadFileVideo = ar => {
         elementVideo.play();
         
     });
-}
+} */
 
 /* MATCH MEDIA */
-const mq = matchMedia("(max-width: 500px)");
+/* const mq = matchMedia("(max-width: 500px)");
 const caja = document.getElementById("caja");
 mq.addEventListener("change", () => {
     console.log("Resolucion cambiada");
     if(mq.matches) caja.classList.replace("caja", "responsive-caja");
     else if(caja.className = "responsive-caja") caja.classList.replace("responsive-caja", "caja");
-})
+}) */
+
+
+/* INTERSECTION OBSERVER */
+/* const caja1 = document.getElementById("caja1");
+const caja2 = document.getElementById("caja2");
+const caja3 = document.getElementById("caja3");
+const caja4 = document.getElementById("caja4");
+
+
+const visibilidad = entradas => {
+    for (const entrada of entradas) {
+        if(entrada.isIntersecting) console.log("Es está mostrando la caja: " + entrada.target.textContent);
+    }
+}
+
+const options = {
+    //root: , // A que elemento se le va a observar.
+    //rootMargin: "30px" , // Se indica desde que margen va a notar 
+    threshold: 0.5 // Lo observa desde el límite que se le indica.
+}
+
+const observer = new IntersectionObserver(visibilidad, options);
+
+observer.observe(caja1);
+observer.observe(caja2);
+observer.observe(caja3);
+observer.observe(caja4); */
+
+/* LAZYLOAD con INTERSECTION OBSERVER */
+/* const publicaciones = document.getElementById("publicaciones");
+let contador = 0;
+let banderaUltimaPublicacion = false;
+
+const crearPublicacion = (name, content) => {
+    const publicacion = document.createElement("DIV");
+    const nombre = document.createElement("H3");
+    const contenido = document.createElement("P");
+    const comentarios = document.createElement("DIV");
+    const btnComentario = document.createElement("INPUT");
+    const btnEnviar = document.createElement("INPUT");
+
+    publicacion.classList.add("publicacion");
+    comentarios.classList.add("comentarios");
+    btnComentario.classList.add("comentario");
+    btnEnviar.classList.add("enviar");
+
+    btnComentario.setAttribute("placeholder", "Introduce un comentario.");
+    nombre.textContent = name;
+    contenido.textContent = content;
+
+    btnComentario.type = "text";
+    btnEnviar.type = "submit";
+
+    comentarios.appendChild(btnComentario);
+    comentarios.appendChild(btnEnviar);
+
+    publicacion.appendChild(nombre);
+    publicacion.appendChild(contenido);
+    publicacion.appendChild(comentarios);
+
+    return publicacion;
+}
+
+const mostrarPublicacion = entrada => {
+    if(entrada[0].isIntersecting) cargarPublicaciones(2);
+}
+
+const options = {
+    threshold : 0.5
+}
+
+const observer = new IntersectionObserver(mostrarPublicacion, options);
+
+const cargarPublicaciones = async num => {
+    const request = await fetch("publicaciones.txt");
+    const content = await request.json();
+    const array = content.content;
+    const documentFragment = document.createDocumentFragment();
+    for(let i=0; i < num; i++) {
+        if(banderaUltimaPublicacion == false) {
+            if(array[contador] != undefined) {
+                const newPublicacion =  crearPublicacion(array[contador].nombre, array[contador].contenido);
+                documentFragment.appendChild(newPublicacion)
+                contador++;
+                if(i == num-1) observer.observe(newPublicacion);
+            }
+            else {
+                banderaUltimaPublicacion = true;
+                let sinPublicaciones = document.createElement("H3");
+                sinPublicaciones.classList.add("sin-publicaciones");
+                sinPublicaciones.textContent = "No hay más publicaciones que mostrar."
+                documentFragment.appendChild(sinPublicaciones);
+                publicaciones.appendChild(documentFragment);
+                break;
+            }
+        }
+    }
+    publicaciones.appendChild(documentFragment);
+}
+
+cargarPublicaciones(2); */
+
+/* VISIBILITYCHANGE */
+/* addEventListener("visibilitychange", (e) => {
+    if(e.target.visibilityState == "visible") document.write("TE HAS SALIDO DE LA PESTAÑA.");
+    else alert("Bienvenido de vuelta");
+}); */
+
+/* NOTIFICATION */
+/* if(!("Notification" in window)) {
+    console.log("Las notificaciones no están activadas en tu navegador.");
+}
+Notification.requestPermission( () => {
+    if(Notification.permission == "granted") {
+        console.log("Notificaciones Permitidas.");
+        new Notification("Primera Notificación");
+    }
+    else {
+        console.log("Notificationes Denegadas");
+    }
+}); */
+
+/* WEB WORKERS */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
