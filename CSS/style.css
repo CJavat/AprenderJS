@@ -320,3 +320,16 @@ video {
     text-align: center;
     color: #d23a3a;
 } */
+
+.btn {
+    border: 2px solid gray;
+    border-radius: 5px;
+    width: 15rem;
+    height: 3rem;
+    margin: 1rem;
+    color: red;
+}
+
+.btn span {
+    margin: auto;
+}

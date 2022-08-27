@@ -1019,7 +1019,7 @@ const options = () => {
     ReadAsText()
     ReadAsDataURL()
 */
-const archivo = document.getElementById('archivo');
+//const archivo = document.getElementById('archivo');
 
 /* LEER UN ÚNICO ARCHIVO - readAsText() */
 /* archivo.addEventListener("change", (e)=>{
@@ -1304,9 +1304,29 @@ Notification.requestPermission( () => {
 }); */
 
 /* WEB WORKERS */
+const worker = new Worker("/JS/worker.js")
 
+/* const cargarData = async div => {
+    const consulta = await fetch('publicaciones.txt');
+    const resultado = await consulta.json();
+    const array = resultado;
 
+    document.getElementById('load-results').innerHTML = array;
+} */
 
+//document.getElementById('btn').addEventListener("click", () => cargarData('#load-results'));
+document.getElementById('btn').addEventListener("click", () => ejecutarBucle());
+
+worker.addEventListener("message", e => {
+    console.log(e.data);
+    worker.terminate();
+})
+
+const ejecutarBucle = () => {
+    worker.postMessage("holaaa");
+}
+
+console.log(worker);
 
 
 
