@@ -1303,7 +1303,7 @@ Notification.requestPermission( () => {
     }
 }); */
 
-/* WEB WORKERS */
+/* WEB WORKERS - DEDICATE WORKERS */
 const worker = new Worker("/JS/worker.js")
 
 /* const cargarData = async div => {
@@ -1315,7 +1315,7 @@ const worker = new Worker("/JS/worker.js")
 } */
 
 //document.getElementById('btn').addEventListener("click", () => cargarData('#load-results'));
-document.getElementById('btn').addEventListener("click", () => ejecutarBucle());
+/* document.getElementById('btn').addEventListener("click", () => ejecutarBucle());
 
 worker.addEventListener("message", e => {
     console.log(e.data);
@@ -1326,23 +1326,119 @@ const ejecutarBucle = () => {
     worker.postMessage("holaaa");
 }
 
-console.log(worker);
+console.log(worker); */
 
+/* OBJETO NAVIGATOR */
+/* INTERFACES.
+    - NavigatorID.
+    - NavigatorLanguaje.
+    - NavigatorOnLine.
+    - NavigatorContentUtils.
+    - NavigatorStorageUtils.
+    - NavigatorCookies.
+    - NavigatorConcurrentHardware.
+    - NavigatorPlugins.
+    - NavigatorUserMedia.
+*/
+/* console.log('AppCodeName: ', navigator.appCodeName); // Devuelve el nombre del navegador.
+console.log('AppCodeName: ', navigator.appName); // Devuelve el nombre oficial del navegador.
+console.log('AppCodeName: ', navigator.appVersion); //Devuelve la version del S.O. 
+console.log('Connection: ', navigator.connection); //Devuelve informacion de lo que estas conectado.
+console.log('Geolocation: ', navigator.geolocation); //Devuelve la direccion. 
+console.log('HardwareConcurrency: ', navigator.hardwareConcurrency); //Devuelve cantidad de nucleos del procesador.
+console.log('Languaje: ', navigator.language); //Devuelve idioma del navegador. 
+console.log('Languajes: ', navigator.languages); //Devuelve arreglo con la cantidad de idiomas.
+console.log('MimeTypes: ', navigator.mimeTypes); //Devuelve todos los MimeTypes que son aceptados. 
+console.log('OnLine: ', navigator.onLine); //Devuelve si esta online u offline.
+console.log('UserAgent: ', navigator.userAgent); //Devuelve informacion acerca del navegador.
+console.log('CookiesEnabled: ', navigator.cookieEnabled); //Devuelve si las cookies estan activadas. 
+console.log('Permissions: ', navigator.permissions); //Devuelve Nos permite acceder a todo lo del navegador. 
+console.log('Plataform: ', navigator.platform); //Devuelve la plataforma en la que estamos. 
+console.log('Plugins: ', navigator.plugins); //Devuelve un array de los plugins que el navegador tiene instalados. 
+console.log('Product: ', navigator.product); //Devuelve Gecko siempre.
+console.log('ServiceWorker: ', navigator.serviceWorker); //Devuelve los workers con los que trabajamos. */
 
+/* METODOS
+    - navigator.getUserMedia(); -----------------> Permite acceder a la camara y microfono del navegador,
+    - navigator.registerContentHandler(); -------> Permite a los web sites registrarse como posibles controladores de un tipo MIME determinado.
+    - navigator.registerProtocolHandler(); ------> Permite a los sitios webs registrarse como posibles controladores de un protocolo determinado.
+    - navigator.requestMediaKeySystemAccess(); --> Devuelve un objeto Promise para un objeto MediaKeySystemAccess.
+    - navigator.sendBeacon(); -------------------> Devuelve un valor Boolean que indica si el navegador tiene o no habilitado java.
+    - navigator.javaEnabled(); ------------------> Usado para transferir, de forma asincrona, conjuntos pequeños de datos HTTP del agente usuario al servidor.
+    - navigator.vibrate(); ----------------------> Causa vibracion en el dispositivo que la soporta. No hace nada si el soporte para vibracion no esta disponible.
+*/
 
+/* MEMORIZATION */
+/* let cache = [];
 
+const memoizer = func => {
+    return e => {
+        const index = e.toString()
+        if(cache[index] == undefined) {
+            cache[index] = func(e);
+        }
+        return cache[index];
+    }
+};
 
+const hacerAlgo = (num) => {
+    const a = 20;
+    const b = 12;
+    let c = 0;
 
+    for(let i = num-1; i>=0; i--) {
+        for(let j=i-1; j>=0; j--) {
+            c += a * b;
+        }
+    }
+    return c;
+}
 
+console.log("Funcion sin memoizer.");
+const date = new Date();
+hacerAlgo(9000);
+console.log(new Date() - date);
 
+const date2 = new Date();
+hacerAlgo(9000);
+console.log(new Date() - date2);
 
+const date3 = new Date();
+hacerAlgo(9000);
+console.log(new Date() - date3);
 
+const date4 = new Date();
+hacerAlgo(9000);
+console.log(new Date() - date4);
 
+const date5 = new Date();
+hacerAlgo(9000);
+console.log(new Date() - date5);
 
+console.log("Funcinon con memoizer");
+const memo = memoizer(hacerAlgo);
 
+const date6 = new Date();
+memo(9000);
+console.log(new Date() - date6);
 
+const date7 = new Date();
+memo(10000);
+console.log(new Date() - date7);
 
+const date8 = new Date();
+memo(9000);
+console.log(new Date() - date8);
 
+const date9 = new Date();
+memo(10000);
+console.log(new Date() - date9);
+
+const date10 = new Date();
+memo(9000);
+console.log(new Date() - date10); */
+
+/* CACHÉ */
 
 
 
