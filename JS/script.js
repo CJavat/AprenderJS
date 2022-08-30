@@ -1491,6 +1491,16 @@ navigator.serviceWorker.addEventListener("message", e => {
 
 
 
+
+
+
+
+
+
+
+
+
+
 const contenedorAbejita = document.getElementById('contenedor-abejita');
 const abejita = document.getElementById('abejita');
 
