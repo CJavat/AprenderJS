@@ -1304,9 +1304,9 @@ Notification.requestPermission( () => {
 }); */
 
 /* WEB WORKERS - DEDICATE WORKERS */
-const worker = new Worker("/JS/worker.js")
+/*const worker = new Worker("/JS/worker.js")
 
-/* const cargarData = async div => {
+    const cargarData = async div => {
     const consulta = await fetch('publicaciones.txt');
     const resultado = await consulta.json();
     const array = resultado;
@@ -1439,18 +1439,41 @@ memo(9000);
 console.log(new Date() - date10); */
 
 /* CACHÉ */
+/*
+    - cache.add(request); // Toma una URL, la recupera y agrega el objeto de respuesta resultante a la caché dada.
+    - cache.addAll(request); // Toma un array de URLs.
+    - cache.match(request, options); // Devuelve un Promise que se resuelve con la respuesta asociada con la primera solicitud coincidente en el objeto almacenado.
+    - cache.matchAll(request, options); // Devuelve un Promise que se resuelve en una matriz de todas las solicitudes coincidentes en el objeto almacenado.
+    - cache.put(request, options); // Toma tanto una solicitud como su respuesta y la agrega a la chacé dada.
+    - cache.delete(request, options); // Elimina el recurso del caché.
+    - cache.keys(request, options); // Devuelve un Promise que se resuelve en una matriz de keys de los objetos almacenados.
+*/
 
+/* caches.open("archivos-estaticos") // Crea un objeto caché para que se pueda almacenar el contenido.
+    .then(cache => { //Obtiener la respuesta del caché.
+        //console.log(cache);
+        //cache.add("index.html");
+        //cache.addAll(["index.html", "/CSS/style.css", "/JS/script.js"]);
+        //cache.match("index.html").then(resolve => { console.log(resolve); });
+        //cache.matchAll("index.html").then(resolve => { console.log(resolve); });
+        //fetch("index.html").then(resolve => { cache.put("index.html", res); });
+        //cache.delete("index.html");
+        //cache.keys().then(resolve => { console.log(resolve); });
+}); */
 
+/* SERVICE WORKERS */
+/* if(navigator.serviceWorker) {
+    navigator.serviceWorker.register("service-worker.js");
+}
 
+navigator.serviceWorker.ready.then(res => res.active.postMessage("Este es un mensaje del navegador"));
 
+navigator.serviceWorker.addEventListener("message", e => {
+    console.log("He recibido un mensaje del service worker:");
+    console.log(e.data);
+}); */
 
-
-
-
-
-
-
-
+/* CHAT REALTIME */
 
 
 
