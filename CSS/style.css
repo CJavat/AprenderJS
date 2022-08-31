@@ -12,6 +12,7 @@ body {
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
+    background-color: #111;
 }
 
 /* .clock {
@@ -114,7 +115,7 @@ body {
 } */
 
 .contenedor-abeja {
-    border: 1px solid black;
+    border: 1px solid white;
     border-radius: 5px;
     width: 120px;
     height: 120px;
