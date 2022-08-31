@@ -1507,6 +1507,135 @@ const obtenerCookie = cookieName => {
 } */
 
 /* API */
+/* const API_URL = 'https://jsonplaceholder.typicode.com';
+const resultados = document.getElementById("app");
+const ul = document.createElement('UL');
+
+fetch(`${API_URL}/users`)
+    .then(res => res.json())
+    .then(users => {
+        users.forEach(user => {
+            let element = document.createElement('LI');
+            element.appendChild(document.createTextNode(`${user.name} - ${user.email}`));
+            ul.appendChild(element);
+
+
+        });
+        resultados.appendChild(ul);
+        resultados.style =`color: #fff`;
+        //const template = users.map((user) => `<li> ${user.name} - ${user.email} </li>`);
+        //resultados.innerHTML = `<ul>${template}</ul>`
+    }) */
+
+/* AVISO DE COOKIES */
+/* const newFechaUTC = dias => {
+    let fecha = new Date();
+    fecha.setTime(fecha.getTime() + dias*1000*60*60*24);
+    return fecha.toUTCString();
+}
+
+const crearCookie = (name, dias) => {
+    let expires = newFechaUTC(dias);
+    document.cookie = `${name}; expires=${expires}`;
+}
+
+const obtenerCookie = cookieName => {
+    let cookies = document.cookie;
+    
+    cookies = cookies.split(";");
+    for(let i=0; cookies.length > i; i++) {
+        let cookie = cookies[i].trim();
+        if(cookie.startsWith(cookieName)) {
+            return cookie.split("=")[1];
+        }
+    }
+    return "No hay cookies.";
+}
+
+if(obtenerCookie("acceptedCookies") !== "si") {
+    console.log(obtenerCookie("acceptedCookies"))
+    setTimeout(() => {
+        document.getElementById("bg-modal").style.zIndex = "10";
+        document.getElementById("bg-modal").style.opacity = "1";
+        
+        document.getElementById("accept").addEventListener("click", () => {
+            crearCookie("acceptedCookies=si", 30);
+            document.getElementById("bg-modal").style.opacity = "0";
+            setTimeout(() => {
+                document.getElementById("bg-modal").style.zIndex = "-1";
+            }, 1000);
+        });
+
+        document.getElementById("deny").addEventListener("click", () => {
+            crearCookie("acceptedCookies=no", 30);
+            document.getElementById("bg-modal").style.opacity = "0";
+            setTimeout(() => {
+                document.getElementById("bg-modal").style.zIndex = "-1";
+            }, 1000);
+        });
+    }, 200);
+} */
+
+/* OBJETO SCREEN */
+/* const anchoTotal = screen.width; // ANCHO TOTAL DE LA PANTALLA.
+const altoTotal = screen.height; //ALTO TOTAL DE LA PANTALLA.
+
+const anchoDisponible = screen.availWidth; // ANCHO DISPONIBLE DE LA PANTALLA.
+const altoDisponible = screen.availHeight; // ALTO DISPONIBLE DE LA PANTALLA.
+
+const resolucion = screen.pixelDepth; // RESOLUCION DE COLOR DE LA PANTALLA.
+const profundidad = screen.colorDepth; // PROFUNDIDAD DE BITS DE LA PALETA DE COLORES. */
+
+/* CANVAS */
+/*
+    - strokeRect.
+    - strokeStyle.
+    - fillRect.
+    - fillStyle.
+    - lineWidth.
+    - moveTo.
+    - lineTo.
+    - closePath.
+    - beginPath.
+*/
+/* const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext("2d");
+
+ctx.lineWidth = '4';
+ctx.strokeStyle = '#48e';
+ctx.fillStyle = '#26a';
+
+ctx.strokeRect(30, 50, 400, 200);
+ctx.fillRect(10, 20, 400, 200);
+
+ctx.lineTo(100, 300);
+ctx.lineTo(120, 350);
+ctx.stroke();
+ctx.closePath();
+ctx.beginPath();
+ctx.lineTo(0, 300);
+ctx.lineTo(120, 100);
+ctx.stroke();
+ctx.closePath(); */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
