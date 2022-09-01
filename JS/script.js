@@ -1618,6 +1618,341 @@ ctx.lineTo(120, 100);
 ctx.stroke();
 ctx.closePath(); */
 
+/* CALCULADORA */
+//#region MOVER ELEMENTO.
+const calculadora = document.getElementById("calculadora");
+const botonArrastre = document.getElementById("arrastrar");
+let mover = false;
+
+botonArrastre.addEventListener("mousedown", e => {
+    mover = true;
+    let shiftX = e.clientX - botonArrastre.getBoundingClientRect().left;
+    let shiftY = e.clientY - botonArrastre.getBoundingClientRect().top;
+    
+    const moverCalculadora = (pageX, pageY) => {
+        calculadora.style.left = ((pageX-shiftX)-100) + "px";
+        calculadora.style.top = pageY-shiftY + "px";
+    }
+    moverCalculadora(e.pageX, e.pageY);
+
+    botonArrastre.addEventListener("mousemove", event => {
+        if(mover == true) {
+            moverCalculadora(event.pageX, event.pageY);
+        }
+    });
+});
+
+botonArrastre.addEventListener("mouseup", ()=> {
+    mover = false;
+    console.log("solto");
+});
+//#endregion MOVER ELEMENTO.
+let arregloResultado = [];
+let inicio = true, escribirPunto = true, escribirSuma = true, escribirResta = true;
+let escribirMultiplicacion = true, escribirDivision = true, resultadoMostrado = false;
+
+const resultadoPantalla = document.getElementById('resultado');
+const n1 = document.getElementById('numero1');
+const n2 = document.getElementById('numero2');
+const n3 = document.getElementById('numero3');
+const n4 = document.getElementById('numero4');
+const n5 = document.getElementById('numero5');
+const n6 = document.getElementById('numero6');
+const n7 = document.getElementById('numero7');
+const n8 = document.getElementById('numero8');
+const n9 = document.getElementById('numero9');
+const n0 = document.getElementById('numero0');
+const punto = document.getElementById('punto');
+const igual = document.getElementById('igual');
+const btnSuma = document.getElementById('suma');
+const btnResta = document.getElementById('resta');
+const btnMultiplicacion = document.getElementById('multiplicacion');
+const btnDivision = document.getElementById('division');
+
+n1.addEventListener("click", () => {
+    if(inicio == true | resultadoMostrado == true) {
+        resultadoPantalla.innerHTML = "1";
+        arregloResultado.push(1);
+        inicio = false;
+        resultadoMostrado = false;
+    }
+    else{
+        resultadoPantalla.innerHTML += "1";
+        arregloResultado.push(1);
+        escribirPunto = true;
+        escribirSuma = true;
+        escribirResta = true;
+        escribirMultiplicacion = true;
+        escribirDivision = true;
+    }
+});
+
+n2.addEventListener("click", () => {
+    if(inicio == true | resultadoMostrado == true) {
+        resultadoPantalla.innerHTML = "2";
+        arregloResultado.push(2);
+        inicio = false;
+        resultadoMostrado = false;
+    }
+    else{
+        resultadoPantalla.innerHTML += "2";
+        arregloResultado.push(2);
+        escribirPunto = true;
+        escribirSuma = true;
+        escribirResta = true;
+        escribirMultiplicacion = true;
+        escribirDivision = true;
+    }
+});
+
+n3.addEventListener("click", () => {
+    if(inicio == true | resultadoMostrado == true) {
+        resultadoPantalla.innerHTML = "3";
+        arregloResultado.push(3);
+        inicio = false;
+        resultadoMostrado = false;
+    }
+    else{
+        resultadoPantalla.innerHTML += "3";
+        arregloResultado.push(3);
+        escribirPunto = true;
+        escribirSuma = true;
+        escribirResta = true;
+        escribirMultiplicacion = true;
+        escribirDivision = true;
+    }
+});
+
+n4.addEventListener("click", () => {
+    if(inicio == true | resultadoMostrado == true) {
+        resultadoPantalla.innerHTML = "4";
+        arregloResultado.push(4);
+        inicio = false;
+        resultadoMostrado = false;
+    }
+    else{
+        resultadoPantalla.innerHTML += "4";
+        arregloResultado.push(4);
+        escribirPunto = true;
+        escribirSuma = true;
+        escribirResta = true;
+        escribirMultiplicacion = true;
+        escribirDivision = true;
+    }
+});
+
+n5.addEventListener("click", () => {
+    if(inicio == true | resultadoMostrado == true) {
+        resultadoPantalla.innerHTML = "5";
+        arregloResultado.push(5);
+        inicio = false;
+        resultadoMostrado = false;
+    }
+    else{
+        resultadoPantalla.innerHTML += "5";
+        arregloResultado.push(5);
+        escribirPunto = true;
+        escribirSuma = true;
+        escribirResta = true;
+        escribirMultiplicacion = true;
+        escribirDivision = true;
+    }
+});
+
+n6.addEventListener("click", () => {
+    if(inicio == true | resultadoMostrado == true) {
+        resultadoPantalla.innerHTML = "6";
+        arregloResultado.push(6);
+        inicio = false;
+        resultadoMostrado = false;
+    }
+    else{
+        resultadoPantalla.innerHTML += "6";
+        arregloResultado.push(6);
+        escribirPunto = true;
+        escribirSuma = true;
+        escribirResta = true;
+        escribirMultiplicacion = true;
+        escribirDivision = true;
+    }
+});
+
+n7.addEventListener("click", () => {
+    if(inicio == true | resultadoMostrado == true) {
+        resultadoPantalla.innerHTML = "7";
+        arregloResultado.push(7);
+        inicio = false;
+        resultadoMostrado = false;
+    }
+    else{
+        resultadoPantalla.innerHTML += "7";
+        arregloResultado.push(7);
+        escribirPunto = true;
+        escribirSuma = true;
+        escribirResta = true;
+        escribirMultiplicacion = true;
+        escribirDivision = true;
+    }
+});
+
+n8.addEventListener("click", () => {
+    if(inicio == true | resultadoMostrado == true) {
+        resultadoPantalla.innerHTML = "8";
+        arregloResultado.push(8);
+        inicio = false;
+        resultadoMostrado = false;
+    }
+    else{
+        resultadoPantalla.innerHTML += "8";
+        arregloResultado.push(8);
+        escribirPunto = true;
+        escribirSuma = true;
+        escribirResta = true;
+        escribirMultiplicacion = true;
+        escribirDivision = true;
+    }
+});
+
+n9.addEventListener("click", () => {
+    if(inicio == true | resultadoMostrado == true) {
+        resultadoPantalla.innerHTML = "9";
+        arregloResultado.push(9);
+        inicio = false;
+        resultadoMostrado = false;
+    }
+    else {
+        resultadoPantalla.innerHTML += "9";
+        arregloResultado.push(9);
+        escribirPunto = true;
+        escribirSuma = true;
+        escribirResta = true;
+        escribirMultiplicacion = true;
+        escribirDivision = true;
+    }
+});
+
+n0.addEventListener("click", () => {
+    if(inicio == true | resultadoMostrado == true) {
+        resultadoPantalla.innerHTML = "0";
+        arregloResultado.push(0);
+        inicio = false;
+        resultadoMostrado = false;
+    }
+    else {
+        resultadoPantalla.innerHTML += "0";
+        arregloResultado.push(0);
+        escribirPunto = true;
+        escribirSuma = true;
+        escribirResta = true;
+        escribirMultiplicacion = true;
+        escribirDivision = true;
+    }
+});
+
+punto.addEventListener("click", () => {
+    if(escribirPunto == true & inicio == false) {
+        escribirPunto = false;
+        if(inicio != true) {
+            resultadoPantalla.innerHTML += ".";
+            arregloResultado.push(".");
+        }
+    } 
+});
+
+btnSuma.addEventListener("click", () => {
+    if(escribirSuma == true & inicio == false) {
+        escribirSuma = false;
+        if(inicio != true) {
+            resultadoPantalla.innerHTML += "+";
+            arregloResultado.push("+");
+        }
+    } 
+});
+
+btnResta.addEventListener("click", () => {
+    if(escribirResta == true & inicio == false) {
+        escribirResta = false;
+        if(inicio != true) {
+            resultadoPantalla.innerHTML += "-";
+            arregloResultado.push("-");
+        }
+    } 
+});
+
+btnMultiplicacion.addEventListener("click", () => {
+    if(escribirMultiplicacion == true & inicio == false) {
+        escribirMultiplicacion = false;
+        if(inicio != true) {
+            resultadoPantalla.innerHTML += "*";
+            arregloResultado.push("*");
+        }
+    } 
+});
+
+btnDivision.addEventListener("click", () => {
+    if(escribirDivision == true & inicio == false) {
+        escribirDivision = false;
+        if(inicio != true) {
+            resultadoPantalla.innerHTML += "/";
+            arregloResultado.push("/");
+        }
+    }
+
+});
+
+/**** */
+igual.addEventListener("click", () => {
+    let regex = /'([0-9]+[+])([-])'/gm;
+    let suma = 0, resta = 0, multiplicacion = 0, division = 0, resultado = 0;
+    let sumar = false, restar = false;
+    let j = 0, resultado1="", aux="", concatenar="";
+    let nuevoArreglo = [];
+
+    for(let i=0; i< arregloResultado.length; i++) {
+        if(arregloResultado[i] == "+") {
+            j++;
+            
+            continue;
+        }
+        nuevoArreglo[j] += ""+ arregloResultado[i];
+    }
+    console.log(nuevoArreglo);
+    
+    console.log(arregloResultado);
+    for(let i=0; i< arregloResultado.length; i++) {
+        //console.log(arregloResultado[i]);
+        
+        
+
+        if(i == 0 | arregloResultado[i] != "+") {
+            aux += arregloResultado[i];
+        }
+        
+        concatenar += arregloResultado[i];
+        
+        if(arregloResultado[i] == "+") {
+            sumar = true;
+            resultado = parseInt(aux);
+            console.log(resultado);
+            continue;
+        }
+        
+        if(sumar == true) {
+            console.log(arregloResultado[i]);
+            resultado += parseInt(arregloResultado[i]);
+            aux="";
+        }
+    }
+
+
+
+    resultadoPantalla.innerHTML = resultado;
+    resultadoMostrado = true;
+    inicio = true;
+    for(let i=arregloResultado.length; i > 0; i--) {
+        arregloResultado.pop();
+    }
+});
 
 
 
@@ -1628,6 +1963,24 @@ ctx.closePath(); */
 
 
 
+
+
+
+
+
+
+
+
+
+
+/* const movimientoMouse = (event) => {
+    //console.log(
+    //    "PageX = ", event.pageX, // Se basan en las coordenadas del MOUSE en toda la página.
+    //    "PageY = ", event.pageY, // Se basan en las coordenadas del MOUSE en toda la página.
+    //    "ClientX = ", event.clientX, // Se basan en las coordenadas del MOUSE solo del View Port.
+    //    "ClientY = ", event.clientY, // Se basan en las coordenadas del MOUSE solo del View Port.
+    //);
+}*/
 
 
 
