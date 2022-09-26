@@ -418,7 +418,9 @@ button {
     overflow-y: hidden;
 }
 
-.resultado::-webkit-scrollbar {display: none;}
+.resultado::-webkit-scrollbar {
+    display: none;
+}
 
 .botones {
     border: 1px solid #111;

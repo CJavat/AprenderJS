@@ -1900,58 +1900,85 @@ btnDivision.addEventListener("click", () => {
 
 });
 
-/**** */
+// *************** OPERACIONES ***************** //
 igual.addEventListener("click", () => {
-    let regex = /'([0-9]+[+])([-])'/gm;
-    let suma = 0, resta = 0, multiplicacion = 0, division = 0, resultado = 0;
-    let sumar = false, restar = false;
-    let j = 0, resultado1="", aux="", concatenar="";
-    let nuevoArreglo = [];
+    let resultado = 0;
+    let banderaSuma = false, banderaResta = false, banderaMultiplicacion = false, banderaDivision = false;
+    let banderaNumerosSeguidos = true;
+    let nuevoArreglo = [], nuevoNumero = '', ultimoNumero = 0;
 
-    for(let i=0; i< arregloResultado.length; i++) {
-        if(arregloResultado[i] == "+") {
-            j++;
-            
+    for(let valor of arregloResultado) {
+        ++ultimoNumero;
+
+        if(valor == '+' | valor == '-' | valor == '*' | valor == '/') {
+            nuevoArreglo.push(nuevoNumero);
+            nuevoArreglo.push(valor);
+            nuevoNumero = '';
             continue;
         }
-        nuevoArreglo[j] += ""+ arregloResultado[i];
+        
+        if(banderaNumerosSeguidos == true) {
+            nuevoNumero += valor;
+        }
+
+        if(ultimoNumero == arregloResultado.length) {
+            nuevoArreglo.push(nuevoNumero);
+            nuevoNumero = '';
+        }
     }
     console.log(nuevoArreglo);
-    
-    console.log(arregloResultado);
-    for(let i=0; i< arregloResultado.length; i++) {
-        //console.log(arregloResultado[i]);
-        
-        
+    for(let valor of nuevoArreglo) {
+        console.log(`valor: ${valor}`);
 
-        if(i == 0 | arregloResultado[i] != "+") {
-            aux += arregloResultado[i];
+        if(valor == '*') {
+            banderaMultiplicacion = true;
+            continue;
         }
-        
-        concatenar += arregloResultado[i];
-        
-        if(arregloResultado[i] == "+") {
-            sumar = true;
-            resultado = parseInt(aux);
-            console.log(resultado);
+        else if(valor == '+') {
+            banderaSuma = true;
+            continue;
+        }
+        else if(valor == '-') {
+            banderaResta = true;
+            continue;
+        }
+        else if(valor == '/') {
+            banderaDivision = true;
             continue;
         }
         
-        if(sumar == true) {
-            console.log(arregloResultado[i]);
-            resultado += parseInt(arregloResultado[i]);
-            aux="";
+        if(banderaSuma) {
+            resultado += parseInt(valor);
+            banderaSuma = false;
+            continue;
         }
+        else if(banderaResta) {
+            resultado -= parseInt(valor);
+            banderaResta = false;
+            continue;
+        }
+        else if(banderaMultiplicacion) {
+            resultado *= parseInt(valor);
+            banderaMultiplicacion = false;
+            continue;
+        }
+        else if(banderaDivision) {
+            resultado /= parseInt(valor);
+            banderaDivision = false;
+            continue;
+        }
+
+        resultado += parseInt(valor);
     }
 
-
-
+    //******** MOSTRAR RESULTADO ****************//
     resultadoPantalla.innerHTML = resultado;
+
+    //***** REINICIALIZACIÓN DE VARIABLES ******//
     resultadoMostrado = true;
     inicio = true;
-    for(let i=arregloResultado.length; i > 0; i--) {
-        arregloResultado.pop();
-    }
+    arregloResultado = [];
+    nuevoArreglo = [];
 });
 
 
